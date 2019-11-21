@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGrid", "DataGrid\DataGr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeCreator", "EmployeeCreator\EmployeeCreator.csproj", "{06BF15CC-A40E-4049-98A2-4B888B960F58}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowNewEmployee", "WindowNewEmployee\WindowNewEmployee.csproj", "{F6D896F6-6A0E-42AF-9FC1-31A29F89129E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{06BF15CC-A40E-4049-98A2-4B888B960F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06BF15CC-A40E-4049-98A2-4B888B960F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06BF15CC-A40E-4049-98A2-4B888B960F58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6D896F6-6A0E-42AF-9FC1-31A29F89129E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6D896F6-6A0E-42AF-9FC1-31A29F89129E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6D896F6-6A0E-42AF-9FC1-31A29F89129E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6D896F6-6A0E-42AF-9FC1-31A29F89129E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

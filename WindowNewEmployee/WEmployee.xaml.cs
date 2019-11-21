@@ -12,16 +12,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-namespace DataGrid
+namespace WindowNewEmployee
 {
     /// <summary>
-    /// Lógica de interacción para WindowNewEmployee.xaml
+    /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class WindowNewEmployee : Window
+    public partial class MainWindow : Window
     {
+
         private Employee employee;
         private string name;
         private string title;
@@ -29,11 +30,10 @@ namespace DataGrid
         public bool itsOk;
         private bool isRelected;
 
-        public WindowNewEmployee()
+        public MainWindow()
         {
             InitializeComponent();
         }
-
         private void btSaveEmployee_Click(object sender, RoutedEventArgs e)
         {
             itsOk = false;
@@ -47,7 +47,6 @@ namespace DataGrid
                     itsOk = true;
                     break;
                 case 1:
-
                     Afiliation = Party.Federalist;
                     itsOk = true;
                     break;
@@ -56,7 +55,7 @@ namespace DataGrid
                     itsOk = true;
                     break;
 
-            }            
+            }
 
             if (cbRelected.IsChecked.Value)
             {
@@ -67,7 +66,7 @@ namespace DataGrid
                 isRelected = false;
             }
 
-            if(tbName.Text.Equals("") || tbTitle.Text.Equals(""))
+            if (tbName.Text.Equals("") || tbTitle.Text.Equals(""))
             {
                 itsOk = false;
             }
@@ -89,3 +88,4 @@ namespace DataGrid
         }
     }
 }
+
