@@ -12,6 +12,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
+                <DataGridTextColumn Header="Affiliation" Binding="{Binding Affiliation}"/>
                 <DataGridCheckBoxColumn Header="ReElected" Binding="{Binding WasReElected}" />
                 <!--<DataGridComboBoxColumn Header="Party" Binding="{Binding Affiliation}" ItemsSource="{Binding Source={StaticResource myEnum}}"/>-->
 
