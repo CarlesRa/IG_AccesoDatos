@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindowNewEmployee"
         mc:Ignorable="d"
-        Title="New Employee" Height="196.539" Width="271.536">
+        Title="New Employee" Height="196.539" Width="271.536" Closing="OnWindowClosing">
     <Grid>
         <Label Content="Name: " HorizontalAlignment="Left" Margin="26,23,0,0" VerticalAlignment="Top" Width="44"/>
         <Label Content="Title:" HorizontalAlignment="Left" Margin="26,54,0,0" VerticalAlignment="Top"/>
