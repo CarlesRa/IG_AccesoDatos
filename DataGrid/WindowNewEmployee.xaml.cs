@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Empleados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -12,7 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Empleados;
+
 
 namespace DataGrid
 {
