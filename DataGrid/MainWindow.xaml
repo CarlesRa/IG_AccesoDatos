@@ -3,22 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Empleados"
+        xmlns:local="clr-namespace:Empleados;assembly=EmployeeCreator"
         mc:Ignorable="d"
         Title="MainWindow" Height="447" Width="520">
-
+    
     <Grid Margin="0,0,291,0">
-        <DataGrid x:Name="dataGrid" AlternatingRowBackground="LightBlue" AlternationCount="2" AutoGenerateColumns="False" Margin="0,0,-290,0" Height="374" VerticalAlignment="Top">
+
+        <DockPanel>
+            <Menu x:Name="menu" DockPanel.Dock="Top" Margin="0,0,188,0">
+                <MenuItem x:Name="myMenuItem" Header="_File" ToolTip="Click to Open the Menu">
+                    <MenuItem x:Name="miNewEmployee" Header="_Nuevo Empleado" Click="miNewEmployee_Click"
+                              InputGestureText="Ctrl+n" />
+                    <Separator />
+                    <MenuItem x:Name="miExit" Header="_Exit" Click="onExit_click" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        
+        <DataGrid x:Name="dataGrid" AlternatingRowBackground="LightBlue" AlternationCount="2" AutoGenerateColumns="False" Margin="0,19,-290,0" Height="355" VerticalAlignment="Top">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
-                <DataGridTextColumn Header="Affiliation" Binding="{Binding Affiliation}"/>
-                <DataGridCheckBoxColumn Header="ReElected" Binding="{Binding WasReElected}" />
-                <!--<DataGridComboBoxColumn Header="Party" Binding="{Binding Affiliation}" ItemsSource="{Binding Source={StaticResource myEnum}}"/>-->
-
-
+                <DataGridTextColumn IsReadOnly="True" Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn IsReadOnly="True" Header="Title" Binding="{Binding Title}" />
+                <DataGridTextColumn IsReadOnly="True" Header="Affiliation" Binding="{Binding Affiliation}"/>
+                <DataGridCheckBoxColumn IsReadOnly="True" Header="ReElected" Binding="{Binding WasReElected}" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Nuevo empleado" HorizontalAlignment="Left" Margin="10,388,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click" />
+        
+        <Button Content="Nuevo empleado" HorizontalAlignment="Left" Margin="10,388,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click" ToolTip="Click to create a new Employee" />
+        
     </Grid>
 </Window>

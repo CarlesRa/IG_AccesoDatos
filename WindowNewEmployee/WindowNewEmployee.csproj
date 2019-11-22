@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataApp.xaml.cs">
+      <DependentUpon>DataApp.xaml</DependentUpon>
+    </Compile>
     <Page Include="WEmployee.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +70,10 @@
       <DependentUpon>WEmployee.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="DataApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -99,6 +106,9 @@
       <Project>{06BF15CC-A40E-4049-98A2-4B888B960F58}</Project>
       <Name>EmployeeCreator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="alerta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

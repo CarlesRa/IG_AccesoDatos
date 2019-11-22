@@ -8,17 +8,17 @@
         Title="New Employee" Height="196.539" Width="271.536" Closing="OnWindowClosing">
     <Grid>
         <Label Content="Name: " HorizontalAlignment="Left" Margin="26,23,0,0" VerticalAlignment="Top" Width="44"/>
-        <Label Content="Title:" HorizontalAlignment="Left" Margin="26,54,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbPolitic" HorizontalAlignment="Left" Margin="19,91,0,0" VerticalAlignment="Top" Width="143"
-                  Text="--Affiliation--">
+        <Label Content="Title:" HorizontalAlignment="Left" Margin="26,54,0,0" VerticalAlignment="Top" Width="40"/>
+        <ComboBox x:Name="cbPolitic" HorizontalAlignment="Left" Margin="26,91,0,0" VerticalAlignment="Top" Width="143" ToolTip="Select an Affiliation">
+
             <ComboBoxItem>Independent</ComboBoxItem>
-            <ComboBoxItem Name="Federalist">Federalist</ComboBoxItem>
-            <ComboBoxItem >DemocratRepublican</ComboBoxItem>
+            <ComboBoxItem>Federalist</ComboBoxItem>
+            <ComboBoxItem>DemocratRepublican</ComboBoxItem>
 
         </ComboBox>
-        <TextBox x:Name="tbName" HorizontalAlignment="Left" Height="23" Margin="81,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <TextBox x:Name="tbTitle" HorizontalAlignment="Left" Height="23" Margin="81,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <CheckBox x:Name="cbRelected" Content="Relected" HorizontalAlignment="Left" Margin="183,91,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btSaveEmployee" Content="Save Employee" HorizontalAlignment="Left" Margin="162,130,0,0" VerticalAlignment="Top" Width="86" Click="btSaveEmployee_Click"/>
+        <TextBox x:Name="tbName" HorizontalAlignment="Left" Height="16" Margin="81,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Enter The Name" />
+        <TextBox x:Name="tbTitle" HorizontalAlignment="Left" Height="16" Margin="81,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Enter the Title"/>
+        <CheckBox x:Name="cbRelected" Content="Relected" HorizontalAlignment="Left" Margin="183,91,0,0" VerticalAlignment="Top" ToolTip="Tip if is Relected"/>
+        <Button x:Name="btSaveEmployee" Content="Save Employee" HorizontalAlignment="Left" Margin="162,130,0,0" VerticalAlignment="Top" Width="86" Click="btSaveEmployee_Click" ToolTip="Press to save a new Employee"/>
     </Grid>
 </Window>

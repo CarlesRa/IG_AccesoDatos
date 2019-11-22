@@ -26,15 +26,61 @@ namespace WindowNewEmployee
         private Employee employee;
         private string name;
         private string title;
-        private Party Afiliation;
+        private Party afiliation;
         public bool itsOk;
         private bool isRelected;
+        private int itemSelected;
 
         public MainWindow()
         {
             InitializeComponent();
+            name = null;
+            title = null;
+        }
+
+        public MainWindow(string name, string title, bool wasRelected, Party party, int itemSelected)
+        {
+            InitializeComponent();
+            tbName.Text = name;
+            tbTitle.Text = title;
+            this.isRelected = wasRelected;
+            this.afiliation = party;
+            cbPolitic.SelectedItem = cbPolitic.Items.GetItemAt(itemSelected);
         }
         private void btSaveEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            rellenarCampos();
+            if (itsOk)
+            {
+                employee = new Employee();
+                employee.addEmployee(name, title, isRelected, afiliation);
+                MessageBox.Show("Empleado guardado con éxito!!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Faltan Atributos a Rellenar");
+            }
+
+            
+            
+        }
+
+        public void OnWindowClosing(object sender, CancelEventArgs e)
+        {
+            if (!itsOk)
+            {
+                if (!itsOk && name != null && title != null && cbPolitic.SelectedIndex == 0
+                   || cbPolitic.SelectedIndex == 1 || cbPolitic.SelectedIndex == 2)
+                {
+                    rellenarCampos();
+                    WindowNewEmployee.Window1 ventanaAlerta = new Window1(name, title, isRelected, afiliation,itemSelected);
+                    ventanaAlerta.Show();
+                }
+            }
+        }
+
+        public void rellenarCampos()
         {
             itsOk = false;
             name = tbName.Text;
@@ -43,15 +89,18 @@ namespace WindowNewEmployee
             switch (cbPolitic.SelectedIndex)
             {
                 case 0:
-                    Afiliation = Party.Indepentent;
+                    afiliation = Party.Indepentent;
+                    itemSelected = 0;
                     itsOk = true;
                     break;
                 case 1:
-                    Afiliation = Party.Federalist;
+                    afiliation = Party.Federalist;
+                    itemSelected = 1;
                     itsOk = true;
                     break;
                 case 2:
-                    Afiliation = Party.DemocratRepublican;
+                    afiliation = Party.DemocratRepublican;
+                    itemSelected = 2;
                     itsOk = true;
                     break;
 
@@ -70,22 +119,8 @@ namespace WindowNewEmployee
             {
                 itsOk = false;
             }
-            this.Close();
         }
 
-        public void OnWindowClosing(object sender, CancelEventArgs e)
-        {
-            if (itsOk == true)
-            {
-                employee = new Employee();
-                employee.addEmployee(name, title, isRelected, Afiliation);
-                MessageBox.Show("Empleado añadido con éxito!!!");
-            }
-            else
-            {
-                MessageBox.Show("Error al añadir...");
-            }
-        }
     }
 }
 
